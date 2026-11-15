@@ -3,14 +3,16 @@
   "version": "1.0.0",
   "description": "tools.oldlane17.com - Fast, SEO-optimized online developer tools & converters",
   "type": "module",
-  "bin": {
-    "wrangler": "./scripts/wrangler.cjs"
-  },
   "scripts": {
     "build": "node scripts/build.mjs",
-    "test": "node scripts/test-snippets.mjs"
+    "test": "node scripts/test-snippets.mjs",
+    "dev": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "highlight.js": "^11.10.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
   }
 }

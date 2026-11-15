@@ -1,3 +1,8 @@
-name = "tools-oldlane17"
-pages_build_output_dir = "./dist"
-compatibility_date = "2024-09-29"
+name = "tools"
+main = "src/index.js"
+compatibility_date = "2024-09-23"
+
+# Serve static files built into dist/
+[assets]
+directory = "./dist"
+binding = "ASSETS"
