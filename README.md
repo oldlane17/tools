@@ -47,7 +47,6 @@ All pages are generated from a single source of truth: [`data/tools.json`](data/
 | 📏 **Universal Unit Converter** | `/tools/unit-converter/` | Converters | Instant | ✅ |
 | 🎨 **Color Converter (HEX/RGB/HSL)** | `/tools/color-converter/` | Converters | Instant | ✅ |
 | 📐 **VectorCutter (Laser / CNC Box)** | `/tools/vectorcutter/` | Design & Maker | External | Landing |
-| 🕹️ **BoredLoot Arcade** | `/tools/boredloot-arcade/` | Design & Maker | External | Landing |
 
 ---
 
