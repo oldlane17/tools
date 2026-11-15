@@ -1,0 +1,18 @@
+{
+  "name": "tools-oldlane17",
+  "version": "1.0.0",
+  "description": "tools.oldlane17.com - Fast, SEO-optimized online developer tools & converters",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/test-snippets.mjs",
+    "dev": "npm run build && npx wrangler pages dev dist",
+    "deploy": "npm run build && npx wrangler pages deploy dist --project-name tools-oldlane17"
+  },
+  "dependencies": {
+    "highlight.js": "^11.10.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.80.0"
+  }
+}

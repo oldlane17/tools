@@ -1,0 +1,45 @@
+<div class="tool-options-grid">
+  <div>
+    <label for="data-from" class="tool-label">Convert From:</label>
+    <select id="data-from" class="tool-select">
+      <option value="json">JSON (JavaScript Object Notation)</option>
+      <option value="csv">CSV (Comma-Separated Values)</option>
+      <option value="yaml">YAML</option>
+      <option value="xml">XML</option>
+    </select>
+  </div>
+  <div>
+    <label for="data-to" class="tool-label">Convert To:</label>
+    <select id="data-to" class="tool-select">
+      <option value="csv">CSV (Comma-Separated Values)</option>
+      <option value="json">JSON (Formatted)</option>
+      <option value="yaml">YAML</option>
+      <option value="xml">XML</option>
+    </select>
+  </div>
+</div>
+
+<div class="tool-form-group">
+  <label for="data-input" class="tool-label">
+    <span>Input Data</span>
+    <span class="tool-label-extra">Raw JSON, CSV, YAML or XML</span>
+  </label>
+  <textarea id="data-input" class="tool-textarea" style="min-height:160px;" placeholder="Paste data here or click 'Try an example'..."></textarea>
+</div>
+
+<div class="tool-actions">
+  <button type="button" id="btn-convert-data" class="btn btn-primary">Convert Data &rarr;</button>
+  <button type="button" id="btn-example-data" class="btn btn-secondary btn-sm">Try an example</button>
+</div>
+
+<div class="tool-result-group">
+  <div class="tool-result-header">
+    <label for="data-output" class="tool-label" style="margin-bottom:0">Converted Output</label>
+    <div class="tool-result-actions">
+      <button type="button" id="btn-copy-data" class="btn btn-sm btn-secondary">Copy</button>
+      <button type="button" id="btn-download-data" class="btn btn-sm btn-secondary">Download File</button>
+    </div>
+  </div>
+  <textarea id="data-output" class="tool-textarea" readonly style="min-height:160px;" placeholder="Converted formatted data will appear here..."></textarea>
+  <div id="data-status" class="tool-status-message" aria-live="polite"></div>
+</div>

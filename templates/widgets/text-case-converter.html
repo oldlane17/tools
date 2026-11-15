@@ -1,0 +1,56 @@
+<!-- Statistics Bar -->
+<div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(130px, 1fr));gap:var(--space-sm);margin-bottom:var(--space-md);background:var(--code-bg);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:var(--space-sm) var(--space-md);text-align:center;">
+  <div>
+    <div style="font-size:1.3rem;font-weight:700;color:var(--accent);" id="cnt-words">0</div>
+    <div style="font-size:0.75rem;color:var(--muted);text-transform:uppercase;">Words</div>
+  </div>
+  <div>
+    <div style="font-size:1.3rem;font-weight:700;color:var(--accent);" id="cnt-chars">0</div>
+    <div style="font-size:0.75rem;color:var(--muted);text-transform:uppercase;">Characters</div>
+  </div>
+  <div>
+    <div style="font-size:1.3rem;font-weight:700;color:var(--accent);" id="cnt-chars-nospace">0</div>
+    <div style="font-size:0.75rem;color:var(--muted);text-transform:uppercase;">No Spaces</div>
+  </div>
+  <div>
+    <div style="font-size:1.3rem;font-weight:700;color:var(--accent);" id="cnt-sentences">0</div>
+    <div style="font-size:0.75rem;color:var(--muted);text-transform:uppercase;">Sentences</div>
+  </div>
+  <div>
+    <div style="font-size:1.3rem;font-weight:700;color:var(--accent);" id="cnt-paragraphs">0</div>
+    <div style="font-size:0.75rem;color:var(--muted);text-transform:uppercase;">Paragraphs</div>
+  </div>
+  <div>
+    <div style="font-size:1.3rem;font-weight:700;color:var(--accent);" id="cnt-readtime">0s</div>
+    <div style="font-size:0.75rem;color:var(--muted);text-transform:uppercase;">Reading Time</div>
+  </div>
+</div>
+
+<div class="tool-form-group">
+  <label for="case-input" class="tool-label">
+    <span>Text to Transform & Analyze</span>
+    <span class="tool-label-extra">Live calculations</span>
+  </label>
+  <textarea id="case-input" class="tool-textarea" style="min-height:160px;" placeholder="Type or paste text here to inspect counts and change case..."></textarea>
+</div>
+
+<!-- Case Buttons -->
+<div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);margin:var(--space-md) 0;">
+  <button type="button" class="btn btn-secondary btn-sm" data-case="upper">UPPERCASE</button>
+  <button type="button" class="btn btn-secondary btn-sm" data-case="lower">lowercase</button>
+  <button type="button" class="btn btn-secondary btn-sm" data-case="title">Title Case</button>
+  <button type="button" class="btn btn-secondary btn-sm" data-case="sentence">Sentence case</button>
+  <button type="button" class="btn btn-secondary btn-sm" data-case="camel">camelCase</button>
+  <button type="button" class="btn btn-secondary btn-sm" data-case="pascal">PascalCase</button>
+  <button type="button" class="btn btn-secondary btn-sm" data-case="snake">snake_case</button>
+  <button type="button" class="btn btn-secondary btn-sm" data-case="kebab">kebab-case</button>
+  <button type="button" class="btn btn-secondary btn-sm" data-case="constant">CONSTANT_CASE</button>
+</div>
+
+<div class="tool-actions">
+  <button type="button" id="btn-copy-case" class="btn btn-primary">Copy Text</button>
+  <button type="button" id="btn-example-case" class="btn btn-secondary btn-sm">Try an example</button>
+  <button type="button" id="btn-clear-case" class="btn btn-secondary btn-sm">Clear</button>
+</div>
+
+<div id="case-status" class="tool-status-message" aria-live="polite"></div>

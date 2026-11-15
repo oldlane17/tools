@@ -1,0 +1,25 @@
+<div class="tool-form-group">
+  <label for="dna-input" class="tool-label">
+    <span>Input Text or DNA Sequence</span>
+    <span class="tool-label-extra">UTF-8 text or A, C, G, T</span>
+  </label>
+  <textarea id="dna-input" class="tool-textarea" placeholder="Type text to convert to DNA (e.g. 'Old Lane 17') or paste nucleotides to decode..."></textarea>
+</div>
+
+<div class="tool-actions">
+  <button type="button" id="btn-encode-dna" class="btn btn-primary">Convert to DNA &rarr;</button>
+  <button type="button" id="btn-decode-dna" class="btn btn-secondary">&larr; Convert to Text</button>
+  <button type="button" id="btn-example-dna" class="btn btn-secondary btn-sm">Try an example</button>
+</div>
+
+<div class="tool-result-group">
+  <div class="tool-result-header">
+    <label for="dna-output" class="tool-label" style="margin-bottom:0">Conversion Result</label>
+    <div class="tool-result-actions">
+      <button type="button" id="btn-copy-dna" class="btn btn-sm btn-secondary">Copy</button>
+    </div>
+  </div>
+  <textarea id="dna-output" class="tool-textarea" readonly style="min-height:100px;" placeholder="Nucleotide sequence or decoded text will appear here..."></textarea>
+  <div id="dna-stats"></div>
+  <div id="dna-status" class="tool-status-message" aria-live="polite"></div>
+</div>

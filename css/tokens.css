@@ -1,0 +1,57 @@
+/* ============================================================
+   tokens.css — Canonical design tokens for tools.oldlane17.com
+   Single source of truth for color palette, spacing, radii, etc.
+   ============================================================ */
+
+:root {
+  /* Brand palette */
+  --bg: #02133e;
+  --accent: #a0a0ff;
+  --accent-light: #c2c2ff;
+  --accent-glow: rgba(160, 160, 255, 0.25);
+  --btn: #182a69;
+  --btn-hover: #22388a;
+  --btn-active: #132254;
+  --text: #e8eaf6;
+  --text-bright: #ffffff;
+  --muted: #9aa3c7;
+  --code-bg: #0a1a4d;
+  --border-subtle: rgba(160, 160, 255, 0.2);
+  --border-strong: rgba(160, 160, 255, 0.45);
+  --surface: #0a1b52;
+  --surface-alt: #0e2363;
+  --card-bg: rgba(24, 42, 105, 0.55);
+  --card-border: rgba(160, 160, 255, 0.22);
+  --danger: #ff6b6b;
+  --success: #51cf66;
+  --warning: #fcc419;
+
+  /* Typography */
+  --font-sans: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 16px var(--accent-glow);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+
+  color-scheme: dark;
+}

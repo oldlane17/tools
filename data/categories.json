@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "converters",
+    "name": "Data & Unit Converters",
+    "short": "Convert data formats, units, measurements, colors, and images effortlessly in your browser.",
+    "icon": "🔄"
+  },
+  {
+    "slug": "encoding-hashing",
+    "name": "Encoding & Hashing",
+    "short": "Encode and decode text, generate cryptographic hashes, and explore data representations.",
+    "icon": "🔐"
+  },
+  {
+    "slug": "text-utilities",
+    "name": "Text & Developer Tools",
+    "short": "Manipulate text casing, inspect characters, format strings, and test code snippets.",
+    "icon": "📝"
+  },
+  {
+    "slug": "design-craft",
+    "name": "Design & Maker Tools",
+    "short": "Interactive tools for vector design, laser cutting templates, and visual creation.",
+    "icon": "📐"
+  }
+]

@@ -1,0 +1,43 @@
+<div class="tool-options-grid">
+  <div>
+    <label for="hash-algo" class="tool-label">Hash Algorithm:</label>
+    <select id="hash-algo" class="tool-select">
+      <option value="SHA-256" selected>SHA-256 (Secure & Recommended)</option>
+      <option value="SHA-512">SHA-512 (High Entropy)</option>
+      <option value="SHA-384">SHA-384</option>
+      <option value="SHA-1">SHA-1 (Legacy / Git)</option>
+      <option value="MD5">MD5 (Checksums)</option>
+    </select>
+  </div>
+  <div style="display:flex;align-items:center;margin-top:auto;padding-bottom:0.75rem;">
+    <label style="display:flex;align-items:center;gap:0.4rem;font-size:0.9rem;cursor:pointer;">
+      <input type="checkbox" id="hash-enable-hmac" style="accent-color:var(--accent);">
+      <span>Enable HMAC (Keyed Authentication)</span>
+    </label>
+  </div>
+</div>
+
+<div id="hash-hmac-group" class="tool-form-group" style="display:none;">
+  <label for="hash-key" class="tool-label">HMAC Secret Key:</label>
+  <input type="text" id="hash-key" class="tool-input" placeholder="Enter shared secret key...">
+</div>
+
+<div class="tool-form-group">
+  <label for="hash-input" class="tool-label">Input Message / Text:</label>
+  <textarea id="hash-input" class="tool-textarea" style="min-height:120px;" placeholder="Type or paste text to compute hash digest in real time..."></textarea>
+</div>
+
+<div class="tool-actions">
+  <button type="button" id="btn-example-hash" class="btn btn-secondary btn-sm">Try an example</button>
+</div>
+
+<div class="tool-result-group">
+  <div class="tool-result-header">
+    <label for="hash-output" class="tool-label" style="margin-bottom:0">Hash Digest (Hexadecimal)</label>
+    <div class="tool-result-actions">
+      <button type="button" id="btn-copy-hash" class="btn btn-sm btn-secondary">Copy Hash</button>
+    </div>
+  </div>
+  <textarea id="hash-output" class="tool-textarea" readonly style="min-height:90px;font-size:1rem;" placeholder="Hex hash digest will appear here..."></textarea>
+  <div id="hash-status" class="tool-status-message" aria-live="polite"></div>
+</div>

@@ -1,0 +1,40 @@
+<div id="b64-dropzone" class="file-dropzone">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="17 8 12 3 7 8"></polyline>
+    <line x1="12" y1="3" x2="12" y2="15"></line>
+  </svg>
+  <p><strong>Click to choose a file</strong> or drag & drop any image/document here to encode to Base64</p>
+  <input type="file" id="b64-file-input" style="display:none">
+</div>
+
+<div class="tool-form-group">
+  <label for="b64-input" class="tool-label">
+    <span>Input Text / Base64</span>
+    <span class="tool-label-extra">Plain string or Base64</span>
+  </label>
+  <textarea id="b64-input" class="tool-textarea" placeholder="Enter text to encode, or paste Base64 to decode..."></textarea>
+</div>
+
+<div style="margin-bottom:var(--space-md);display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;color:var(--text);">
+  <input type="checkbox" id="b64-urlsafe" style="accent-color:var(--accent);">
+  <label for="b64-urlsafe">Use URL-safe Base64 (replace + and / with - and _)</label>
+</div>
+
+<div class="tool-actions">
+  <button type="button" id="btn-encode-b64" class="btn btn-primary">Encode to Base64 &rarr;</button>
+  <button type="button" id="btn-decode-b64" class="btn btn-secondary">&larr; Decode from Base64</button>
+  <button type="button" id="btn-example-b64" class="btn btn-secondary btn-sm">Try an example</button>
+</div>
+
+<div class="tool-result-group">
+  <div class="tool-result-header">
+    <label for="b64-output" class="tool-label" style="margin-bottom:0">Result</label>
+    <div class="tool-result-actions">
+      <button type="button" id="btn-copy-b64" class="btn btn-sm btn-secondary">Copy</button>
+      <button type="button" id="btn-download-b64" class="btn btn-sm btn-secondary">Download .txt</button>
+    </div>
+  </div>
+  <textarea id="b64-output" class="tool-textarea" readonly style="min-height:110px;" placeholder="Base64 encoded string or decoded text will appear here..."></textarea>
+  <div id="b64-status" class="tool-status-message" aria-live="polite"></div>
+</div>

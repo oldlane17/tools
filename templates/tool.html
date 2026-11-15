@@ -1,0 +1,135 @@
+<!-- Header Banner Ad Slot -->
+<div class="ad-slot-wrapper ad-slot-header-responsive">
+  <span class="ad-label">Advertisement</span>
+  <div class="ad-slot ad-leaderboard" data-ad="leaderboard"></div>
+  <div class="ad-slot ad-full-display" data-ad="full-display"></div>
+  <div class="ad-slot ad-mobile-header" data-ad="header-300x100"></div>
+</div>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/category/{{tool.category}}/">{{categoryName}}</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">{{tool.name}}</span>
+</nav>
+
+<header>
+  <h1>{{tool.icon}} {{tool.name}}</h1>
+  <p class="lead">{{tool.short}}</p>
+  <div class="privacy-badge">
+    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+    </svg>
+    <span>100% Client-Side: Your data never leaves your browser</span>
+  </div>
+</header>
+
+<div class="tool-page-layout">
+  <div class="tool-main-column">
+    <!-- Interactive Tool Widget -->
+    <div class="tool-workspace" id="tool-app">
+      {{{widgetHtml}}}
+    </div>
+
+    <!-- In-Content Rect Ad Slot -->
+    <div class="ad-slot-wrapper">
+      <span class="ad-label">Advertisement</span>
+      <div class="ad-slot" data-ad="large-rect"></div>
+    </div>
+
+    <!-- How to Use Section -->
+    <section aria-labelledby="how-to-use-heading">
+      <h2 id="how-to-use-heading">How to Use {{tool.name}}</h2>
+      <ol class="steps-list">
+        {{#each tool.howTo}}
+        <li>
+          <strong>{{title}}:</strong> {{text}}
+        </li>
+        {{/each}}
+      </ol>
+    </section>
+
+    <!-- Python "Build It Yourself" Section (if enabled) -->
+    {{#if tool.python.enabled}}
+    <section class="python-section" aria-labelledby="python-section-heading">
+      <div class="python-header">
+        <h2 id="python-section-heading" class="python-title">
+          <span>🐍 Build It Yourself in Python</span>
+        </h2>
+        <span class="python-badge">{{tool.python.difficulty}}</span>
+      </div>
+
+      <p style="color:var(--muted);margin-bottom:var(--space-md);">
+        {{tool.python.intro}}
+      </p>
+
+      <div class="python-code-card">
+        <div class="python-code-topbar">
+          <span class="filename">{{tool.python.file}}</span>
+          <button type="button" class="btn btn-sm btn-secondary btn-copy-code" aria-label="Copy Python code">Copy Code</button>
+        </div>
+        <pre><code class="language-python">{{{pythonCodeHighlighted}}}</code></pre>
+      </div>
+
+      {{#if tool.python.exampleInput}}
+      <div class="python-example-box">
+        <strong>Example Usage:</strong><br>
+        <code>{{{tool.python.exampleInput}}}</code> &rarr; <code>{{{tool.python.exampleOutput}}}</code>
+      </div>
+      {{/if}}
+
+      <div class="python-tip">
+        <strong>💡 Learning Tip:</strong> {{tool.python.tip}}
+        <div style="margin-top:0.5rem;">
+          <a href="https://www.oldlane17.com/tutorials/python/" target="_blank" rel="noopener">Explore more Python tutorials on Old Lane 17 &rarr;</a>
+        </div>
+      </div>
+    </section>
+    {{/if}}
+
+    <!-- Cross-Promo Card -->
+    {{{promoCard}}}
+
+    <!-- FAQ Section -->
+    <section aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        {{#each tool.faq}}
+        <div class="faq-item">
+          <h3 class="faq-question">{{q}}</h3>
+          <p class="faq-answer">{{a}}</p>
+        </div>
+        {{/each}}
+      </div>
+    </section>
+
+    <!-- Related Tools Section -->
+    <section class="related-tools-section" aria-labelledby="related-tools-heading">
+      <h2 id="related-tools-heading">Related Tools</h2>
+      <div class="tools-grid">
+        {{#each relatedTools}}
+        <a href="/tools/{{slug}}/" class="tool-card">
+          <div class="tool-card-header">
+            <span class="tool-card-icon" aria-hidden="true">{{icon}}</span>
+            <h3 class="tool-card-title">{{name}}</h3>
+          </div>
+          <p class="tool-card-desc">{{short}}</p>
+          <div class="tool-card-footer">
+            <span class="category-chip" style="font-size:0.75rem;padding:0.15rem 0.5rem">{{categoryName}}</span>
+            <span class="tool-type-badge {{type}}">{{typeLabel}}</span>
+          </div>
+        </a>
+        {{/each}}
+      </div>
+    </section>
+  </div>
+
+  <!-- Sticky Sidebar Ad Slot (Desktop >= 1200px) -->
+  <aside class="tool-sidebar-column" aria-label="Sidebar Advertisement">
+    <div class="ad-slot-wrapper" style="margin:0">
+      <span class="ad-label">Advertisement</span>
+      <div class="ad-slot" data-ad="wide-skyscraper"></div>
+    </div>
+  </aside>
+</div>

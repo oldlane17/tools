@@ -1,0 +1,66 @@
+<!-- Mode Tabs -->
+<div style="display:flex;gap:var(--space-xs);margin-bottom:var(--space-md);border-bottom:1px solid var(--border-subtle);padding-bottom:var(--space-xs);">
+  <button type="button" id="tab-btn-url" class="btn btn-secondary btn-sm active" style="border-radius:var(--radius-sm) var(--radius-sm) 0 0;">URL Encoder / Decoder</button>
+  <button type="button" id="tab-btn-ts" class="btn btn-secondary btn-sm" style="border-radius:var(--radius-sm) var(--radius-sm) 0 0;">Unix Timestamp</button>
+</div>
+
+<!-- Panel 1: URL Converter -->
+<div id="panel-url">
+  <div class="tool-form-group">
+    <label for="url-input" class="tool-label">Input URL or String:</label>
+    <textarea id="url-input" class="tool-textarea" style="min-height:100px;" placeholder="Paste URL or query parameter string here..."></textarea>
+  </div>
+
+  <div class="tool-actions">
+    <button type="button" id="btn-url-encode-comp" class="btn btn-primary">Encode Component &rarr;</button>
+    <button type="button" id="btn-url-encode-full" class="btn btn-secondary">Encode Full URL &rarr;</button>
+    <button type="button" id="btn-url-decode" class="btn btn-secondary">&larr; Decode URL</button>
+    <button type="button" id="btn-url-example" class="btn btn-secondary btn-sm">Try an example</button>
+  </div>
+
+  <div class="tool-result-group">
+    <label for="url-output" class="tool-label">URL Output:</label>
+    <textarea id="url-output" class="tool-textarea" readonly style="min-height:100px;" placeholder="Encoded or decoded URL will appear here..."></textarea>
+    <div id="url-status" class="tool-status-message" aria-live="polite"></div>
+  </div>
+</div>
+
+<!-- Panel 2: Unix Timestamp Converter -->
+<div id="panel-ts" style="display:none;">
+  <div class="tool-form-group">
+    <div class="tool-label">
+      <label for="ts-input">Unix Epoch Timestamp (Seconds or Milliseconds):</label>
+      <button type="button" id="btn-ts-now" class="btn btn-sm btn-primary">Current Time (Now)</button>
+    </div>
+    <input type="text" id="ts-input" class="tool-input" placeholder="e.g. 1700000000">
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:var(--space-md);margin-top:var(--space-md);">
+    <div class="tool-form-group">
+      <label for="ts-out-utc" class="tool-label">UTC Time:</label>
+      <input type="text" id="ts-out-utc" class="tool-input" readonly>
+    </div>
+    <div class="tool-form-group">
+      <label for="ts-out-local" class="tool-label">Local Browser Time:</label>
+      <input type="text" id="ts-out-local" class="tool-input" readonly>
+    </div>
+    <div class="tool-form-group">
+      <label for="ts-out-iso" class="tool-label">ISO 8601 String:</label>
+      <input type="text" id="ts-out-iso" class="tool-input" readonly>
+    </div>
+    <div class="tool-form-group">
+      <label for="ts-out-rel" class="tool-label">Relative Time:</label>
+      <input type="text" id="ts-out-rel" class="tool-input" readonly>
+    </div>
+  </div>
+
+  <div style="margin-top:var(--space-md);padding-top:var(--space-md);border-top:1px solid var(--border-subtle);">
+    <label for="ts-datepicker" class="tool-label">Convert Date & Time to Epoch Timestamp:</label>
+    <div style="display:flex;gap:var(--space-md);flex-wrap:wrap;align-items:center;">
+      <input type="datetime-local" id="ts-datepicker" class="tool-input" style="max-width:280px;">
+      <input type="text" id="ts-out-epoch" class="tool-input" readonly placeholder="Calculated Epoch Seconds" style="max-width:220px;">
+    </div>
+  </div>
+
+  <div id="ts-status" class="tool-status-message" aria-live="polite"></div>
+</div>

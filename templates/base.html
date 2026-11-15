@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#02133e">
+
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <link rel="canonical" href="{{canonicalUrl}}">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="{{ogType}}">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:url" content="{{canonicalUrl}}">
+  <meta property="og:image" content="{{ogImage}}">
+  <meta property="og:site_name" content="Old Lane 17 Tools">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{title}}">
+  <meta name="twitter:description" content="{{description}}">
+  <meta name="twitter:image" content="{{ogImage}}">
+
+  <!-- Preconnect to asset CDN and Adcash -->
+  <link rel="preconnect" href="https://ressources.oldlane17.com" crossorigin>
+  <link rel="preconnect" href="https://acscdn.com" crossorigin>
+
+  <!-- 1. Dark theme initialization before first paint -->
+  <script src="/assets/js/theme-init.js"></script>
+
+  <!-- 2. Favicons -->
+  <link rel="icon" href="{{resourcesBase}}/branding/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="{{resourcesBase}}/branding/favicon.png">
+  <link rel="apple-touch-icon" href="{{resourcesBase}}/branding/favicon.png">
+
+  <!-- 3. Stylesheets: shared first, local tokens and overrides last -->
+  <link rel="stylesheet" href="{{resourcesBase}}/css/main.css">
+  <link rel="stylesheet" href="{{resourcesBase}}/css/topnav.css">
+  <link rel="stylesheet" href="{{resourcesBase}}/css/footer.css">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/tool.css">
+  <link rel="stylesheet" href="/css/ads.css">
+  <link rel="stylesheet" href="/css/consent.css">
+
+  <!-- 4. Component loader -->
+  <script src="{{resourcesBase}}/js/fhinclude.js"></script>
+  <script>
+    if (typeof loadComponent === "undefined") {
+      document.write('<script src="/assets/js/fhinclude.js"><\\/script>');
+    }
+  </script>
+
+  {{#if jsonLd}}
+  <script type="application/ld+json">
+  {{{jsonLd}}}
+  </script>
+  {{/if}}
+</head>
+<body {{#if bodyAttrs}}{{{bodyAttrs}}}{{/if}}>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- Header placeholder injected by fhinclude.js -->
+  <div id="header-placeholder"></div>
+
+  <main class="container" id="main-content">
+    {{content}}
+  </main>
+
+  <!-- Footer placeholder injected by fhinclude.js -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Deferred Scripts -->
+  <script src="{{resourcesBase}}/js/topnav.js" defer></script>
+  <script src="{{resourcesBase}}/js/main.js" defer></script>
+  <script src="/assets/js/site.js" defer></script>
+  <script src="/assets/js/ads.js" defer></script>
+  {{#if toolScript}}
+  <script src="{{toolScript}}" defer></script>
+  {{/if}}
+</body>
+</html>

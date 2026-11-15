@@ -1,0 +1,66 @@
+<!-- Header Banner Ad Slot -->
+<div class="ad-slot-wrapper ad-slot-header-responsive">
+  <span class="ad-label">Advertisement</span>
+  <div class="ad-slot ad-leaderboard" data-ad="leaderboard"></div>
+  <div class="ad-slot ad-full-display" data-ad="full-display"></div>
+  <div class="ad-slot ad-mobile-header" data-ad="header-300x100"></div>
+</div>
+
+<header style="margin-top: var(--space-md); margin-bottom: var(--space-lg);">
+  <h1>Free Online Developer Tools & Converters</h1>
+  <p class="lead">
+    Fast, privacy-friendly online utilities designed for engineers, students, and creators.
+    Everything runs 100% locally in your browser — your data never leaves your computer.
+  </p>
+</header>
+
+<!-- Search & Categories Section -->
+<section class="search-section" aria-label="Search and filter tools">
+  <div class="search-box-wrapper">
+    <svg class="search-icon-svg" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+    <input type="search" id="tool-search-input" placeholder="Search tools (e.g. DNA, Base64, JSON, Hash, Case, Image)..." autocomplete="off" aria-label="Search tools">
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-top:var(--space-md);" role="navigation" aria-label="Tool Categories">
+    <a href="/" class="category-chip active">All Tools ({{totalToolsCount}})</a>
+    {{#each categories}}
+    <a href="/category/{{slug}}/" class="category-chip">{{icon}} {{name}}</a>
+    {{/each}}
+  </div>
+</section>
+
+<!-- Tools Grid -->
+<section aria-label="Tools directory">
+  <div class="tools-grid" id="tools-container">
+    {{#each tools}}
+    <a href="/tools/{{slug}}/" class="tool-card" data-title="{{name}}" data-keywords="{{keywordsStr}}" data-desc="{{short}}" data-category="{{category}}">
+      <div class="tool-card-header">
+        <span class="tool-card-icon" aria-hidden="true">{{icon}}</span>
+        <h2 class="tool-card-title">{{name}}</h2>
+      </div>
+      <p class="tool-card-desc">{{short}}</p>
+      <div class="tool-card-footer">
+        <span class="category-chip" style="font-size:0.75rem;padding:0.15rem 0.5rem">{{categoryName}}</span>
+        <span class="tool-type-badge {{type}}">{{typeLabel}}</span>
+      </div>
+    </a>
+    {{/each}}
+  </div>
+
+  <div id="tool-search-empty" style="display:none;padding:var(--space-2xl) 0;text-align:center;color:var(--muted)">
+    <p style="font-size:1.25rem;">🔍 No tools found matching your search.</p>
+    <p>Try searching for terms like <em>DNA</em>, <em>Base64</em>, <em>JSON</em>, <em>Hash</em>, <em>Case</em>, or <em>Image</em>.</p>
+  </div>
+</section>
+
+<!-- In-Content Ad Slot -->
+<div class="ad-slot-wrapper">
+  <span class="ad-label">Advertisement</span>
+  <div class="ad-slot" data-ad="medium-rect"></div>
+</div>
+
+<!-- Cross Promo Card -->
+{{{promoCard}}}

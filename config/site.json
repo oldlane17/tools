@@ -1,0 +1,19 @@
+{
+  "name": "Old Lane 17 Tools",
+  "domain": "tools.oldlane17.com",
+  "url": "https://tools.oldlane17.com",
+  "mainSiteUrl": "https://www.oldlane17.com",
+  "resourcesBase": "https://ressources.oldlane17.com/ressources",
+  "language": "en",
+  "tagline": "Free, privacy-friendly online developer tools & converters",
+  "description": "Fast, privacy-friendly online tools: Text to DNA, Base64 encoder, JSON/CSV/YAML/XML data converter, image converter, hash generator, case converter, unit converter and more. 100% in-browser processing.",
+  "themeColor": "#02133e",
+  "menu": [
+    { "label": "All Tools", "href": "/" },
+    { "label": "Converters", "href": "/category/converters/" },
+    { "label": "Encoders & Hashes", "href": "/category/encoding-hashing/" },
+    { "label": "Text & Dev", "href": "/category/text-utilities/" },
+    { "label": "Old Lane 17 Blog", "href": "https://www.oldlane17.com" },
+    { "label": "Tutorials", "href": "https://www.oldlane17.com/tutorials/" }
+  ]
+}

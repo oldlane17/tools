@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tools.oldlane17.com/sitemap.xml

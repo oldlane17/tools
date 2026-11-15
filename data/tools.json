@@ -1,0 +1,517 @@
+[
+  {
+    "slug": "text-to-dna",
+    "type": "internal",
+    "name": "Text to DNA Converter",
+    "short": "Convert any text into a biological DNA sequence (A, C, G, T) and decode it back.",
+    "description": "Free online text to DNA converter. Encode text as nucleotides using 2-bit binary mapping and decode it again. 100% in-browser processing.",
+    "category": "encoding-hashing",
+    "keywords": ["text to dna", "dna encoder", "binary to nucleotides", "dna decoder", "bioinformatics text", "synthetic biology encoder"],
+    "icon": "🧬",
+    "howTo": [
+      { "title": "Enter your text", "text": "Type or paste standard text into the Input Text field, or click 'Try an example' to load sample data." },
+      { "title": "Encode or Decode", "text": "Click 'Convert to DNA' to encode text into nucleotides (A, C, G, T), or paste a nucleotide sequence and click 'Convert to Text'." },
+      { "title": "Copy or Download", "text": "Inspect the generated sequence and nucleotide statistics, then click 'Copy' to copy the sequence to your clipboard." }
+    ],
+    "faq": [
+      {
+        "q": "How does text get converted into DNA nucleotides?",
+        "a": "Text is encoded into UTF-8 bytes, each represented as 8 binary bits. Every 2 bits are mapped onto one of the four DNA nucleotide bases: 00 = Adenine (A), 01 = Cytosine (C), 10 = Guanine (G), and 11 = Thymine (T). Thus, 1 character produces 4 nucleotides."
+      },
+      {
+        "q": "Can I convert DNA sequences back into readable text?",
+        "a": "Yes! The decoder reads the sequence in 4-nucleotide chunks (8 bits = 1 byte) and reconstitutes the original UTF-8 characters."
+      },
+      {
+        "q": "Is synthetic DNA actually used for digital data storage?",
+        "a": "Yes, modern researchers at Harvard, MIT, and Microsoft store petabytes of archival data in synthesized DNA molecules due to DNA's incredible density and thousand-year longevity."
+      },
+      {
+        "q": "Does my text leave my browser?",
+        "a": "Never. All conversions happen entirely on your computer using client-side JavaScript. No text is ever uploaded or logged."
+      }
+    ],
+    "related": ["base64-converter", "binary-hex-converter", "hash-generator", "text-case-converter"],
+    "python": {
+      "enabled": true,
+      "file": "snippets/text-to-dna.py",
+      "difficulty": "beginner",
+      "intro": "Encode strings to DNA and back using standard library bitwise operations and a 2-bit nucleotide lookup table.",
+      "tip": "Formatting bytes with f'{b:08b}' gives clean 8-bit strings that slice naturally into 2-bit nucleotide pairs.",
+      "exampleInput": "text_to_dna('Old Lane 17')",
+      "exampleOutput": "CATCCACGCATCCATGCATCGACTCACGCAGCTCATCCACCCATCCACCACATCAGCATCAGCA"
+    },
+    "videoSlider": true,
+    "datePublished": "2026-11-15",
+    "dateModified": "2026-11-15"
+  },
+  {
+    "slug": "base64-converter",
+    "type": "internal",
+    "name": "Base64 Encoder & Decoder",
+    "short": "Encode and decode plain text, URLs, and binary files to Base64 safely in your browser.",
+    "description": "Fast online Base64 encoder and decoder. Convert text and files to Base64 format and reverse Base64 strings to UTF-8. Client-side and secure.",
+    "category": "encoding-hashing",
+    "keywords": ["base64 encode", "base64 decode", "base64 converter", "base64 to text", "file to base64", "base64 tool"],
+    "icon": "📦",
+    "howTo": [
+      { "title": "Choose Mode", "text": "Select 'Text Mode' to encode or decode text strings, or 'File Mode' to convert local files directly into Base64 data URLs." },
+      { "title": "Input Data", "text": "Enter your raw string or drag-and-drop any image, document, or audio file into the dropzone." },
+      { "title": "Execute & Copy", "text": "Click 'Encode to Base64' or 'Decode from Base64'. Use the one-click Copy button to copy your output." }
+    ],
+    "faq": [
+      {
+        "q": "What is Base64 encoding?",
+        "a": "Base64 is a binary-to-text encoding scheme that translates binary data into an ASCII string using 64 printable characters (A-Z, a-z, 0-9, +, and /). It is widely used in MIME email attachments, Data URLs, and web APIs."
+      },
+      {
+        "q": "Does Base64 provide encryption or security?",
+        "a": "No, Base64 is strictly an encoding format for data transmission, not encryption. Anyone can decode a Base64 string instantly."
+      },
+      {
+        "q": "How does Base64 affect file size?",
+        "a": "Base64 represents 3 bytes of binary data using 4 ASCII characters, resulting in an approximate 33% increase in data size."
+      },
+      {
+        "q": "Can I convert images to Base64 for inline HTML/CSS?",
+        "a": "Yes! Drag and drop any image (PNG, JPG, SVG, WebP) and check the 'Generate Data URL' checkbox to get ready-to-paste `data:image/...;base64,...` code."
+      }
+    ],
+    "related": ["url-timestamp-converter", "hash-generator", "binary-hex-converter", "text-to-dna"],
+    "python": {
+      "enabled": true,
+      "file": "snippets/base64-converter.py",
+      "difficulty": "beginner",
+      "intro": "Use Python's built-in `base64` module to handle UTF-8 text and binary data conversions cleanly.",
+      "tip": "Always encode text strings to bytes (e.g. .encode('utf-8')) before passing them to b64encode.",
+      "exampleInput": "b64_encode('Hello World!')",
+      "exampleOutput": "SGVsbG8gV29ybGQh"
+    },
+    "videoSlider": true,
+    "datePublished": "2026-11-15",
+    "dateModified": "2026-11-15"
+  },
+  {
+    "slug": "data-converter",
+    "type": "internal",
+    "name": "JSON ⇄ CSV ⇄ YAML ⇄ XML Converter",
+    "short": "Seamlessly convert structured data between JSON, CSV, YAML, and XML formats with live validation.",
+    "description": "Convert structured data between JSON, CSV, YAML, and XML online. Instant syntax validation, formatting, and downloads. Runs locally in browser.",
+    "category": "converters",
+    "keywords": ["json to csv", "csv to json", "json to yaml", "yaml to json", "xml to json", "data format converter"],
+    "icon": "📊",
+    "howTo": [
+      { "title": "Paste Source Data", "text": "Paste your JSON, CSV, YAML, or XML data into the input box or click 'Try an example' to load sample records." },
+      { "title": "Select Target Format", "text": "Pick your target output format: JSON, CSV, YAML, or XML from the format selector." },
+      { "title": "Convert & Download", "text": "Click 'Convert Data' to process and validate. Download the formatted file or copy it straight to your clipboard." }
+    ],
+    "faq": [
+      {
+        "q": "Which data formats are supported?",
+        "a": "You can freely convert between JSON (JavaScript Object Notation), CSV (Comma-Separated Values), YAML (YAML Ain't Markup Language), and XML (Extensible Markup Language)."
+      },
+      {
+        "q": "How does JSON to CSV handle nested objects?",
+        "a": "Nested objects and arrays are intelligently flattened with dot notation headers (e.g. `user.address.city`) or serialized as JSON strings so no data is lost."
+      },
+      {
+        "q": "Are large CSV files supported?",
+        "a": "Yes, our client-side stream parser can process tens of thousands of rows within fractions of a second without crashing your browser."
+      },
+      {
+        "q": "Is my proprietary company data safe?",
+        "a": "Yes. The conversion engine runs 100% locally in your browser memory. No data is transmitted across the internet."
+      }
+    ],
+    "related": ["base64-converter", "text-case-converter", "binary-hex-converter"],
+    "python": {
+      "enabled": true,
+      "file": "snippets/data-converter.py",
+      "difficulty": "intermediate",
+      "intro": "Convert tabular and structured data using Python's standard `json`, `csv`, and basic serialization.",
+      "tip": "Python's `csv.DictReader` and `csv.DictWriter` provide an effortless bridge between row tuples and dictionary objects.",
+      "exampleInput": "json_to_csv([{'name': 'Alice', 'role': 'Dev'}, {'name': 'Bob', 'role': 'Designer'}])",
+      "exampleOutput": "name,role\\nAlice,Dev\\nBob,Designer\\n"
+    },
+    "videoSlider": true,
+    "datePublished": "2026-11-15",
+    "dateModified": "2026-11-15"
+  },
+  {
+    "slug": "image-converter",
+    "type": "internal",
+    "name": "Image Converter & Compressor",
+    "short": "Convert images between PNG, JPEG, WebP, and AVIF formats with quality and resizing controls.",
+    "description": "Free client-side image converter. Convert PNG, JPG, WebP, and SVG images, adjust quality, resize, and compress instantly without server uploads.",
+    "category": "converters",
+    "keywords": ["image converter", "png to webp", "jpg to png", "webp converter", "image compressor", "canvas image conversion"],
+    "icon": "🖼️",
+    "howTo": [
+      { "title": "Drop Your Image", "text": "Drag and drop any PNG, JPEG, WebP, or SVG file from your device into the upload area." },
+      { "title": "Configure Output", "text": "Choose your desired target format (PNG, JPEG, WebP) and adjust the compression quality slider." },
+      { "title": "Convert & Download", "text": "Click 'Convert Image' to render via HTML5 Canvas and click 'Download Image' to save your file." }
+    ],
+    "faq": [
+      {
+        "q": "Why convert images to WebP?",
+        "a": "WebP provides superior lossless and lossy compression compared to PNG and JPEG. WebP images are typically 25% to 35% smaller with identical visual fidelity, boosting SEO and website page speed."
+      },
+      {
+        "q": "Do you support transparent PNG to WebP conversion?",
+        "a": "Yes! WebP fully supports alpha channel transparency. Your transparent backgrounds will remain intact."
+      },
+      {
+        "q": "Are my personal photos uploaded to a cloud server?",
+        "a": "No! All image decodes and encodes are processed directly by your graphics hardware and browser Canvas API. Your pictures never leave your device."
+      }
+    ],
+    "related": ["base64-converter", "color-converter", "unit-converter"],
+    "python": {
+      "enabled": true,
+      "file": "snippets/image-converter.py",
+      "difficulty": "beginner",
+      "intro": "Convert and optimize images in Python using the industry standard `Pillow` (PIL) library.",
+      "tip": "When converting PNG with alpha transparency to JPEG, create a solid background image first to prevent black fill artifacts.",
+      "exampleInput": "convert_image('photo.png', 'photo.webp', quality=85)",
+      "exampleOutput": "Converted photo.png -> photo.webp (saved 42% file size)"
+    },
+    "videoSlider": true,
+    "datePublished": "2026-11-15",
+    "dateModified": "2026-11-15"
+  },
+  {
+    "slug": "text-case-converter",
+    "type": "internal",
+    "name": "Text Case Converter & Counter",
+    "short": "Transform text between camelCase, snake_case, kebab-case, Title Case, and calculate words and characters.",
+    "description": "Online text case converter and word counter. Switch between UPPERCASE, lowercase, camelCase, snake_case, PascalCase, kebab-case and inspect stats.",
+    "category": "text-utilities",
+    "keywords": ["case converter", "camelcase to snake case", "title case generator", "word counter", "character counter", "text formatter"],
+    "icon": "🔤",
+    "howTo": [
+      { "title": "Enter Your Text", "text": "Type or paste your text into the text area." },
+      { "title": "Choose Transformation", "text": "Click any case button: camelCase, snake_case, kebab-case, Title Case, UPPERCASE, lowercase, or PascalCase." },
+      { "title": "Review Real-time Stats", "text": "Check live word counts, character counts (with/without spaces), sentences, paragraphs, and estimated reading time." }
+    ],
+    "faq": [
+      {
+        "q": "What casing conventions are supported?",
+        "a": "We support camelCase (myVariableName), snake_case (my_variable_name), kebab-case (my-variable-name), PascalCase (MyVariableName), Title Case, Sentence case, UPPERCASE, and lowercase."
+      },
+      {
+        "q": "How is reading time calculated?",
+        "a": "Reading time is estimated using the standard average reading speed of 200 words per minute for adult readers."
+      },
+      {
+        "q": "Can I convert programming identifiers in bulk?",
+        "a": "Yes! Enter multiple lines or code fragments; delimiters like underscores, hyphens, and whitespace are handled consistently."
+      }
+    ],
+    "related": ["data-converter", "binary-hex-converter", "text-to-dna", "url-timestamp-converter"],
+    "python": {
+      "enabled": true,
+      "file": "snippets/text-case-converter.py",
+      "difficulty": "beginner",
+      "intro": "Implement robust string casing transforms using Python regular expressions and string methods.",
+      "tip": "Using re.sub(r'([a-z0-9])([A-Z])', r'\\1_\\2', s) smoothly splits camelCase words into snake_case tokens.",
+      "exampleInput": "to_snake_case('helloWorldFromTools')",
+      "exampleOutput": "hello_world_from_tools"
+    },
+    "videoSlider": true,
+    "datePublished": "2026-11-15",
+    "dateModified": "2026-11-15"
+  },
+  {
+    "slug": "binary-hex-converter",
+    "type": "internal",
+    "name": "Binary, Hex, Decimal & Text Converter",
+    "short": "Convert numbers and text between Binary (base 2), Octal (base 8), Decimal (base 10), Hex (base 16), and ASCII.",
+    "description": "Convert binary, hexadecimal, decimal, octal and ASCII text in real time. Full bitwise breakdown, byte padding, and zero-latency calculations.",
+    "category": "converters",
+    "keywords": ["binary to hex", "hex to decimal", "binary to text", "hex to text", "decimal to binary", "base converter"],
+    "icon": "0️⃣",
+    "howTo": [
+      { "title": "Choose Input Type", "text": "Select your input format: Plain Text, Binary (0101...), Hexadecimal (0x...), Decimal, or Octal." },
+      { "title": "Type or Paste Value", "text": "Enter your numbers or string into the input box." },
+      { "title": "View Synchronized Outputs", "text": "All bases update simultaneously in real time. Click 'Copy' next to any base field." }
+    ],
+    "faq": [
+      {
+        "q": "What is the difference between binary text conversion and numeric conversion?",
+        "a": "Numeric conversion translates a single integer value (e.g. 255 = 11111111 = 0xFF). Text conversion translates each character into its 8-bit ASCII/UTF-8 byte value in sequence."
+      },
+      {
+        "q": "Can it handle 64-bit and arbitrarily large numbers?",
+        "a": "Yes, our converter uses JavaScript BigInt to accurately process integers of arbitrary precision without floating point truncation."
+      },
+      {
+        "q": "How does Hex byte grouping work?",
+        "a": "You can toggle space separation between bytes (e.g. `4F 6C 64`) for cleaner reading when inspecting network packets or memory dumps."
+      }
+    ],
+    "related": ["hash-generator", "base64-converter", "text-to-dna", "unit-converter"],
+    "python": {
+      "enabled": true,
+      "file": "snippets/binary-hex-converter.py",
+      "difficulty": "beginner",
+      "intro": "Use Python's built-in `bin()`, `hex()`, `oct()`, and `int()` functions with explicit radix bases.",
+      "tip": "Pass the base as the second argument to int(string, base), e.g. int('1010', 2) -> 10.",
+      "exampleInput": "convert_base('42', from_base=10, to_base=16)",
+      "exampleOutput": "'2a'"
+    },
+    "videoSlider": true,
+    "datePublished": "2026-11-15",
+    "dateModified": "2026-11-15"
+  },
+  {
+    "slug": "url-timestamp-converter",
+    "type": "internal",
+    "name": "URL & Unix Timestamp Converter",
+    "short": "Encode and decode URLs and convert Unix epoch timestamps to human-readable dates in local and UTC time.",
+    "description": "Online URL encoder/decoder and Unix epoch timestamp converter. Parse query strings, format ISO 8601 timestamps, and calculate time differences.",
+    "category": "text-utilities",
+    "keywords": ["url encode", "url decode", "unix timestamp converter", "epoch to date", "epoch converter", "query string decoder"],
+    "icon": "⏱️",
+    "howTo": [
+      { "title": "Select Tab", "text": "Switch between 'URL Encoder/Decoder' and 'Unix Timestamp Converter' depending on your task." },
+      { "title": "Enter URL or Timestamp", "text": "Paste your URI string to encode/decode, or enter seconds/milliseconds to see the formatted date." },
+      { "title": "Inspect & Copy", "text": "View UTC, local time, ISO 8601 strings, and relative time (e.g. '2 hours ago')." }
+    ],
+    "faq": [
+      {
+        "q": "What is the difference between encodeURI and encodeURIComponent?",
+        "a": "`encodeURI` preserves protocol characters like `https://`, `:`, and `/`, whereas `encodeURIComponent` escapes all special characters so the string can be safely passed inside a query parameter."
+      },
+      {
+        "q": "What is Unix Epoch time?",
+        "a": "Unix time is the number of seconds that have elapsed since midnight UTC on January 1, 1970, not counting leap seconds."
+      },
+      {
+        "q": "Does this tool support millisecond timestamps?",
+        "a": "Yes! The tool automatically detects whether your input has 10 digits (seconds) or 13 digits (milliseconds) and converts accordingly."
+      }
+    ],
+    "related": ["base64-converter", "text-case-converter", "binary-hex-converter"],
+    "python": {
+      "enabled": true,
+      "file": "snippets/url-timestamp-converter.py",
+      "difficulty": "beginner",
+      "intro": "Work with URL parameters and timestamps using Python's standard `urllib.parse` and `datetime` modules.",
+      "tip": "Use datetime.datetime.fromtimestamp(ts, tz=datetime.timezone.utc) to always work with timezone-aware datetimes.",
+      "exampleInput": "epoch_to_iso(1700000000)",
+      "exampleOutput": "'2023-11-14T22:13:20+00:00'"
+    },
+    "videoSlider": true,
+    "datePublished": "2026-11-15",
+    "dateModified": "2026-11-15"
+  },
+  {
+    "slug": "hash-generator",
+    "type": "internal",
+    "name": "Cryptographic Hash Generator",
+    "short": "Generate secure SHA-256, SHA-512, SHA-384, SHA-1, and MD5 hashes with HMAC support in your browser.",
+    "description": "Fast cryptographic hash generator. Compute SHA-256, SHA-512, SHA-1, and HMAC hashes client-side using the native Web Crypto API.",
+    "category": "encoding-hashing",
+    "keywords": ["sha256 generator", "hash generator", "md5 generator", "sha512 online", "hmac generator", "web crypto hash"],
+    "icon": "🔑",
+    "howTo": [
+      { "title": "Enter Plain Text", "text": "Type or paste the string or message you wish to hash." },
+      { "title": "Choose Algorithm & Secret Key", "text": "Select SHA-256, SHA-512, SHA-384, or SHA-1. Optionally supply a secret key for HMAC authentication." },
+      { "title": "Copy Hash", "text": "The calculated hexadecimal hash digest is displayed in real time. Click 'Copy' to copy to clipboard." }
+    ],
+    "faq": [
+      {
+        "q": "Which cryptographic hash is recommended for modern security?",
+        "a": "SHA-256 and SHA-512 from the SHA-2 family are the gold standards for checksums and digital signatures. Older algorithms like MD5 and SHA-1 should not be used for security-critical applications due to known collision vulnerabilities."
+      },
+      {
+        "q": "How does this generator compute hashes in the browser?",
+        "a": "It uses the native browser Web Crypto API (`window.crypto.subtle.digest`), executing hardware-accelerated C++ crypto primitives directly on your device."
+      },
+      {
+        "q": "Can I hash passwords with SHA-256?",
+        "a": "While SHA-256 is cryptographically one-way, password storage should utilize slow, salted key derivation algorithms like Argon2, bcrypt, or PBKDF2 to resist brute force."
+      }
+    ],
+    "related": ["base64-converter", "binary-hex-converter", "text-to-dna"],
+    "python": {
+      "enabled": true,
+      "file": "snippets/hash-generator.py",
+      "difficulty": "beginner",
+      "intro": "Generate industry-standard cryptographic hashes using Python's standard `hashlib` and `hmac` libraries.",
+      "tip": "Always pass bytes to hashlib.sha256(data.encode('utf-8')) and call .hexdigest() for the human-readable string.",
+      "exampleInput": "generate_sha256('Old Lane 17')",
+      "exampleOutput": "'57f5c0... (64-char hex string)'"
+    },
+    "videoSlider": true,
+    "datePublished": "2026-11-15",
+    "dateModified": "2026-11-15"
+  },
+  {
+    "slug": "unit-converter",
+    "type": "internal",
+    "name": "Universal Unit & Measurement Converter",
+    "short": "Convert Length, Mass, Temperature, Digital Data, Speed, and Area with instant precision.",
+    "description": "Free universal unit converter. Convert meters, feet, kilograms, pounds, Celsius, Fahrenheit, MB, GB, and speed accurately in your browser.",
+    "category": "converters",
+    "keywords": ["unit converter", "length converter", "temperature converter", "celsius to fahrenheit", "bytes to gigabytes", "metric to imperial"],
+    "icon": "📏",
+    "howTo": [
+      { "title": "Pick Measurement Type", "text": "Select the measurement category: Length, Mass/Weight, Temperature, Digital Storage, Speed, or Area." },
+      { "title": "Choose From & To Units", "text": "Select your source unit (e.g. Kilometers) and target unit (e.g. Miles)." },
+      { "title": "Enter Quantity", "text": "Type any numerical value; results calculate instantaneously with adjustable decimal precision." }
+    ],
+    "faq": [
+      {
+        "q": "What is the difference between Metric (SI) and Imperial systems?",
+        "a": "The Metric system uses base-10 multiples (meters, grams, liters), whereas the Imperial system uses traditional non-decimal divisions (inches, feet, pounds, ounces)."
+      },
+      {
+        "q": "What is the difference between MB and MiB in digital storage?",
+        "a": "Megabytes (MB) use decimal multiples (1 MB = 1,000,000 bytes = 10^6), while Mebibytes (MiB) use binary multiples (1 MiB = 1,048,576 bytes = 2^20)."
+      },
+      {
+        "q": "How accurate are the conversions?",
+        "a": "Conversions use exact NIST and BIPM conversion constants with IEEE 754 double precision floating point arithmetic."
+      }
+    ],
+    "related": ["color-converter", "binary-hex-converter", "data-converter"],
+    "python": {
+      "enabled": true,
+      "file": "snippets/unit-converter.py",
+      "difficulty": "beginner",
+      "intro": "Build a universal unit converter by normalizing all measurements to standard base SI units.",
+      "tip": "Converting through a base unit (e.g. Value -> Meters -> Target) requires only 2N conversion factors instead of N^2 pairings.",
+      "exampleInput": "convert_length(100, 'feet', 'meters')",
+      "exampleOutput": "30.48"
+    },
+    "videoSlider": true,
+    "datePublished": "2026-11-15",
+    "dateModified": "2026-11-15"
+  },
+  {
+    "slug": "color-converter",
+    "type": "internal",
+    "name": "Color Converter (HEX, RGB, HSL, CMYK)",
+    "short": "Convert colors between HEX, RGB, HSL, and CMYK with a live color picker and contrast checker.",
+    "description": "Convert colors between HEX, RGB, HSL, and CMYK. Includes color picker, CSS code generation, and WCAG accessibility contrast ratio preview.",
+    "category": "converters",
+    "keywords": ["hex to rgb", "rgb to hex", "color converter", "hsl converter", "cmyk to rgb", "wcag contrast checker"],
+    "icon": "🎨",
+    "howTo": [
+      { "title": "Pick or Paste a Color", "text": "Use the visual color picker or paste any HEX (`#a0a0ff`), RGB (`rgb(160, 160, 255)`), or HSL code." },
+      { "title": "View Synchronized Formats", "text": "HEX, RGB, HSL, HSV, and CMYK values update synchronously with instant CSS copy snippets." },
+      { "title": "Check Contrast", "text": "Review WCAG AA/AAA contrast ratios against light and dark backgrounds for accessible design." }
+    ],
+    "faq": [
+      {
+        "q": "What is the difference between RGB and CMYK?",
+        "a": "RGB is an additive color model used for digital screens (Red, Green, Blue light). CMYK is a subtractive color model used in color printing (Cyan, Magenta, Yellow, Key/Black ink)."
+      },
+      {
+        "q": "Why is HSL preferred by UI designers?",
+        "a": "HSL (Hue, Saturation, Lightness) aligns with human visual perception. Changing the lightness or saturation of a hue produces natural UI shades without altering the base color."
+      },
+      {
+        "q": "What is a good WCAG contrast ratio for text?",
+        "a": "WCAG 2.1 Level AA requires a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text. Level AAA requires at least 7:1."
+      }
+    ],
+    "related": ["image-converter", "unit-converter", "data-converter"],
+    "python": {
+      "enabled": true,
+      "file": "snippets/color-converter.py",
+      "difficulty": "beginner",
+      "intro": "Convert color strings between HEX and RGB using Python tuple unpacking and string formatting.",
+      "tip": "Use tuple(int(hex_code[i:i+2], 16) for i in (0, 2, 4)) to cleanly parse a 6-digit hex string into RGB integers.",
+      "exampleInput": "hex_to_rgb('#a0a0ff')",
+      "exampleOutput": "(160, 160, 255)"
+    },
+    "videoSlider": true,
+    "datePublished": "2026-11-15",
+    "dateModified": "2026-11-15"
+  },
+  {
+    "slug": "vectorcutter",
+    "type": "external",
+    "name": "VectorCutter – Laser & CNC Box Generator",
+    "short": "Design custom finger-jointed boxes, living hinges, and SVG cut paths directly in your browser.",
+    "description": "VectorCutter is a free web app to generate custom laser cut boxes, kerf-compensated finger joints, and SVG patterns for laser cutters and CNC mills.",
+    "category": "design-craft",
+    "keywords": ["laser cutter box generator", "vector cutter", "finger joint generator", "kerf compensation", "cnc box maker", "svg laser templates"],
+    "icon": "📐",
+    "url": "https://vectorcutter.com",
+    "openInNewTab": true,
+    "externalHost": "vectorcutter.com",
+    "features": [
+      "Custom 3D dimensions (width, height, depth) with real-time SVG preview",
+      "Configurable material thickness and laser kerf compensation",
+      "Finger joint, tab, and slotted closure designs",
+      "Clean, ready-to-cut SVG export compatible with LightBurn, Glowforge, and Inkscape",
+      "100% free and client-side processing"
+    ],
+    "howTo": [
+      { "title": "Configure Dimensions", "text": "Set your desired interior or exterior box dimensions (width, depth, height) in millimeters or inches." },
+      { "title": "Set Material & Kerf", "text": "Enter your sheet material thickness (e.g. 3.0mm birch plywood) and your machine's beam kerf." },
+      { "title": "Export SVG", "text": "Download the nested SVG layout and load it directly into LightBurn, LaserGRBL, or your CNC controller." }
+    ],
+    "faq": [
+      {
+        "q": "What is kerf compensation in laser cutting?",
+        "a": "Kerf is the width of material vaporized by the laser beam (typically 0.1mm - 0.25mm). Without kerf compensation, finger joints fit loosely; VectorCutter adjusts joints so parts press-fit snugly."
+      },
+      {
+        "q": "Is VectorCutter compatible with my laser software?",
+        "a": "Yes! VectorCutter produces clean, standard-compliant vector SVG files with organized cut/engrave stroke colors suitable for LightBurn, Glowforge, RDWorks, and Inkscape."
+      }
+    ],
+    "related": ["unit-converter", "image-converter", "color-converter"],
+    "python": {
+      "enabled": false
+    },
+    "videoSlider": false,
+    "datePublished": "2026-11-15",
+    "dateModified": "2026-11-15"
+  },
+  {
+    "slug": "boredloot-arcade",
+    "type": "external",
+    "name": "BoredLoot Arcade & Mini Games",
+    "short": "Free web-based retro arcade games, puzzles, and interactive challenges built for quick fun.",
+    "description": "Play free online arcade games, brain teasers, and mini-challenges on BoredLoot Arcade. Fast-loading, mobile-friendly browser games with no downloads.",
+    "category": "design-craft",
+    "keywords": ["arcade games", "free browser games", "html5 games", "retro mini games", "boredloot arcade"],
+    "icon": "🕹️",
+    "url": "https://arcade.oldlane17.com",
+    "openInNewTab": true,
+    "externalHost": "arcade.oldlane17.com",
+    "features": [
+      "Instant play in your browser with zero installations",
+      "Optimized for desktop keyboards and touch mobile devices",
+      "Lightweight, fast-loading HTML5 canvas engines",
+      "Free challenges and casual arcade classics"
+    ],
+    "howTo": [
+      { "title": "Choose Game", "text": "Browse the selection of retro arcade and puzzle games on the BoredLoot platform." },
+      { "title": "Play Instantly", "text": "Click play to load games directly in your browser without plugins." },
+      { "title": "Compete & Enjoy", "text": "Earn high scores and challenge your friends." }
+    ],
+    "faq": [
+      {
+        "q": "Are the games on BoredLoot Arcade completely free?",
+        "a": "Yes, all games in the arcade are 100% free to play directly in modern web browsers."
+      },
+      {
+        "q": "Do I need to install any app or extension?",
+        "a": "No, games run on standard HTML5 and WebGL web standards."
+      }
+    ],
+    "related": ["text-to-dna", "text-case-converter"],
+    "python": {
+      "enabled": false
+    },
+    "videoSlider": false,
+    "datePublished": "2026-11-15",
+    "dateModified": "2026-11-15"
+  }
+]

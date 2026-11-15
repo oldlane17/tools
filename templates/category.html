@@ -1,0 +1,56 @@
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <span class="breadcrumb-separator">›</span>
+  <span>Categories</span>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">{{category.name}}</span>
+</nav>
+
+<!-- Header Banner Ad Slot -->
+<div class="ad-slot-wrapper ad-slot-header-responsive">
+  <span class="ad-label">Advertisement</span>
+  <div class="ad-slot ad-leaderboard" data-ad="leaderboard"></div>
+  <div class="ad-slot ad-full-display" data-ad="full-display"></div>
+  <div class="ad-slot ad-mobile-header" data-ad="header-300x100"></div>
+</div>
+
+<header style="margin-top: var(--space-md); margin-bottom: var(--space-lg);">
+  <h1>{{category.icon}} {{category.name}}</h1>
+  <p class="lead">{{category.short}}</p>
+</header>
+
+<!-- Category Filter Strip -->
+<div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-bottom:var(--space-lg);" role="navigation" aria-label="Tool Categories">
+  <a href="/" class="category-chip">All Tools</a>
+  {{#each allCategories}}
+  <a href="/category/{{slug}}/" class="category-chip {{activeClass}}">{{icon}} {{name}}</a>
+  {{/each}}
+</div>
+
+<!-- Tools Grid -->
+<section aria-label="{{category.name}} tools">
+  <div class="tools-grid">
+    {{#each categoryTools}}
+    <a href="/tools/{{slug}}/" class="tool-card">
+      <div class="tool-card-header">
+        <span class="tool-card-icon" aria-hidden="true">{{icon}}</span>
+        <h2 class="tool-card-title">{{name}}</h2>
+      </div>
+      <p class="tool-card-desc">{{short}}</p>
+      <div class="tool-card-footer">
+        <span class="tool-type-badge {{type}}">{{typeLabel}}</span>
+        <span>Open tool →</span>
+      </div>
+    </a>
+    {{/each}}
+  </div>
+</section>
+
+<!-- In-Content Ad Slot -->
+<div class="ad-slot-wrapper">
+  <span class="ad-label">Advertisement</span>
+  <div class="ad-slot" data-ad="square"></div>
+</div>
+
+<!-- Cross Promo Card -->
+{{{promoCard}}}

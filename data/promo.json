@@ -1,0 +1,26 @@
+[
+  {
+    "id": "youtube",
+    "title": "Old Lane 17 on YouTube",
+    "text": "Watch hands-on coding tutorials, hardware builds, and web dev guides.",
+    "url": "https://www.youtube.com/@oldlane17",
+    "icon": "▶️",
+    "placement": ["tool-footer", "home"]
+  },
+  {
+    "id": "blog",
+    "title": "Old Lane 17 Tech Blog",
+    "text": "Practical programming articles, architecture notes, and in-depth tutorials.",
+    "url": "https://www.oldlane17.com",
+    "icon": "📰",
+    "placement": ["tool-footer", "home", "python-section"]
+  },
+  {
+    "id": "learn",
+    "title": "Programming Tutorials",
+    "text": "Learn Python, JavaScript, TypeScript, Bash, Rust, and more from scratch.",
+    "url": "https://www.oldlane17.com/tutorials/",
+    "icon": "🎓",
+    "placement": ["python-section"]
+  }
+]

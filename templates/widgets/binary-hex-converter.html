@@ -1,0 +1,56 @@
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-md);flex-wrap:wrap;gap:0.5rem;">
+  <span style="font-size:0.9rem;color:var(--muted);">All fields update synchronously in real time:</span>
+  <label style="display:flex;align-items:center;gap:0.4rem;font-size:0.85rem;color:var(--text);cursor:pointer;">
+    <input type="checkbox" id="num-spacing" checked style="accent-color:var(--accent);">
+    <span>Space byte chunks (e.g. 01010100 01101111)</span>
+  </label>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:var(--space-md);">
+  <div class="tool-form-group">
+    <div class="tool-label">
+      <label for="num-text">UTF-8 Plain Text</label>
+      <button type="button" class="btn btn-sm btn-secondary" data-copy-target="num-text">Copy</button>
+    </div>
+    <input type="text" id="num-text" class="tool-input" placeholder="e.g. Hello">
+  </div>
+
+  <div class="tool-form-group">
+    <div class="tool-label">
+      <label for="num-bin">Binary (Base 2)</label>
+      <button type="button" class="btn btn-sm btn-secondary" data-copy-target="num-bin">Copy</button>
+    </div>
+    <input type="text" id="num-bin" class="tool-input" placeholder="e.g. 01001000 01100101 01101100 01101100 01101111">
+  </div>
+
+  <div class="tool-form-group">
+    <div class="tool-label">
+      <label for="num-hex">Hexadecimal (Base 16)</label>
+      <button type="button" class="btn btn-sm btn-secondary" data-copy-target="num-hex">Copy</button>
+    </div>
+    <input type="text" id="num-hex" class="tool-input" placeholder="e.g. 48 65 6C 6C 6F">
+  </div>
+
+  <div class="tool-form-group">
+    <div class="tool-label">
+      <label for="num-dec">Decimal (Base 10)</label>
+      <button type="button" class="btn btn-sm btn-secondary" data-copy-target="num-dec">Copy</button>
+    </div>
+    <input type="text" id="num-dec" class="tool-input" placeholder="e.g. 310939249775">
+  </div>
+
+  <div class="tool-form-group">
+    <div class="tool-label">
+      <label for="num-oct">Octal (Base 8)</label>
+      <button type="button" class="btn btn-sm btn-secondary" data-copy-target="num-oct">Copy</button>
+    </div>
+    <input type="text" id="num-oct" class="tool-input" placeholder="e.g. 441453313367">
+  </div>
+</div>
+
+<div class="tool-actions">
+  <button type="button" id="btn-example-num" class="btn btn-secondary btn-sm">Try an example</button>
+  <button type="button" id="btn-clear-num" class="btn btn-secondary btn-sm">Clear All</button>
+</div>
+
+<div id="num-status" class="tool-status-message" aria-live="polite"></div>

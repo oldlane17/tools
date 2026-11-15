@@ -1,0 +1,385 @@
+/* ============================================================
+   tool.css — Tool workspace, form widgets, results, python snippets
+   ============================================================ */
+
+/* Tool layout container */
+.tool-page-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  margin-top: var(--space-md);
+}
+
+@media (min-width: 1200px) {
+  .tool-page-layout {
+    grid-template-columns: minmax(0, 1fr) 180px;
+  }
+}
+
+.tool-main-column {
+  min-width: 0;
+}
+
+.tool-sidebar-column {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .tool-sidebar-column {
+    display: block;
+    position: sticky;
+    top: 90px;
+    align-self: start;
+  }
+}
+
+/* Privacy notice badge */
+.privacy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  background-color: rgba(160, 160, 255, 0.08);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.75rem;
+  margin-bottom: var(--space-md);
+}
+.privacy-badge svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: var(--accent);
+}
+
+/* Tool Workspace Container */
+.tool-workspace {
+  background-color: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-xl);
+  backdrop-filter: blur(10px);
+}
+
+@media (min-width: 768px) {
+  .tool-workspace {
+    padding: var(--space-xl);
+  }
+}
+
+/* Form Controls inside tool workspace */
+.tool-form-group {
+  margin-bottom: var(--space-md);
+}
+.tool-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-bright);
+  margin-bottom: var(--space-xs);
+}
+.tool-label-extra {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: normal;
+}
+
+.tool-textarea,
+.tool-input,
+.tool-select {
+  width: 100%;
+  background-color: var(--btn);
+  color: var(--text-bright);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.tool-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.tool-textarea:focus,
+.tool-input:focus,
+.tool-select:focus {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-glow);
+  outline: none;
+}
+
+.tool-select {
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+
+/* Drag & Drop File Zone */
+.file-dropzone {
+  border: 2px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-md);
+  text-align: center;
+  background-color: rgba(24, 42, 105, 0.4);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-bottom: var(--space-md);
+}
+.file-dropzone:hover, .file-dropzone.dragover {
+  border-color: var(--accent);
+  background-color: rgba(24, 42, 105, 0.8);
+  box-shadow: var(--shadow-glow);
+}
+.file-dropzone p {
+  margin: var(--space-xs) 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.file-dropzone svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  stroke: var(--accent);
+  margin-bottom: var(--space-xs);
+}
+
+/* Tool Actions Bar */
+.tool-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+  margin: var(--space-md) 0;
+}
+
+/* Tool Options Grid */
+.tool-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  padding: var(--space-md);
+  background-color: rgba(2, 19, 62, 0.4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Result Area */
+.tool-result-group {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-subtle);
+}
+.tool-result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xs);
+}
+.tool-result-actions {
+  display: flex;
+  gap: var(--space-xs);
+}
+.tool-result-box {
+  width: 100%;
+  min-height: 120px;
+  background-color: var(--code-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  color: var(--text-bright);
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow-y: auto;
+}
+
+/* Live region message */
+.tool-status-message {
+  font-size: 0.88rem;
+  margin-top: var(--space-xs);
+  min-height: 1.25rem;
+  color: var(--muted);
+}
+.tool-status-message.success {
+  color: var(--success);
+}
+.tool-status-message.error {
+  color: var(--danger);
+}
+
+/* Python "Build It Yourself" Section */
+.python-section {
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-2xl);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .python-section {
+    padding: var(--space-xl);
+  }
+}
+
+.python-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+.python-title {
+  margin: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+.python-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background-color: rgba(160, 160, 255, 0.15);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+.python-code-card {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin: var(--space-md) 0;
+}
+.python-code-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: rgba(2, 19, 62, 0.6);
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.python-code-topbar .filename {
+  font-family: var(--font-mono);
+}
+.python-code-card pre {
+  margin: 0;
+  padding: 1.25rem;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-bright);
+}
+.python-tip {
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  border-left: 4px solid var(--accent);
+  background-color: rgba(160, 160, 255, 0.06);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: 0.92rem;
+}
+.python-tip strong {
+  color: var(--accent);
+}
+.python-example-box {
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  background: rgba(2, 19, 62, 0.4);
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  border: 1px solid var(--border-subtle);
+}
+.python-example-box code {
+  font-family: var(--font-mono);
+  color: var(--accent-light);
+  background-color: var(--code-bg);
+  padding: 0.15rem 0.35rem;
+  border-radius: var(--radius-sm);
+}
+
+/* Cross Promo Card */
+.promo-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  background: linear-gradient(135deg, rgba(24, 42, 105, 0.65) 0%, rgba(2, 19, 62, 0.85) 100%);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  margin: var(--space-2xl) 0;
+  box-shadow: var(--shadow-sm);
+}
+
+@media (min-width: 640px) {
+  .promo-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-xl);
+  }
+}
+
+.promo-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+.promo-icon {
+  font-size: 2.25rem;
+  flex-shrink: 0;
+}
+.promo-info h3 {
+  margin: 0 0 var(--space-xs);
+  font-size: 1.2rem;
+  color: var(--text-bright);
+}
+.promo-info p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.promo-cta {
+  flex-shrink: 0;
+}
+
+/* Syntax Highlighting overrides for highlight.js */
+.hljs {
+  background: transparent !important;
+  color: #e8eaf6 !important;
+}
+.hljs-keyword, .hljs-selector-tag, .hljs-built_in {
+  color: #a0a0ff !important;
+  font-weight: 600;
+}
+.hljs-string, .hljs-title {
+  color: #7ecf9e !important;
+}
+.hljs-comment {
+  color: #6a7fa3 !important;
+  font-style: italic;
+}
+.hljs-number, .hljs-literal {
+  color: #f4a361 !important;
+}
+.hljs-attr, .hljs-variable, .hljs-params {
+  color: #64bde8 !important;
+}

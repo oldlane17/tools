@@ -1,0 +1,49 @@
+<div style="display:grid;grid-template-columns:auto 1fr;gap:var(--space-lg);align-items:center;margin-bottom:var(--space-lg);">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;">
+    <label for="color-picker" class="tool-label" style="margin-bottom:0">Visual Picker</label>
+    <input type="color" id="color-picker" value="#a0a0ff" style="width:70px;height:70px;border-radius:var(--radius-md);border:2px solid var(--accent);cursor:pointer;background:transparent;padding:0;">
+  </div>
+  <div id="color-preview-box" style="height:80px;border-radius:var(--radius-lg);border:1px solid var(--border-strong);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm);background-color:#a0a0ff;">
+    <span style="font-weight:700;font-size:1.1rem;color:#02133e;background:rgba(255,255,255,0.85);padding:0.25rem 0.75rem;border-radius:var(--radius-sm);">Color Preview</span>
+  </div>
+</div>
+
+<!-- Color Inputs Grid -->
+<div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:var(--space-md);">
+  <div class="tool-form-group">
+    <label for="color-hex" class="tool-label">HEX Code</label>
+    <input type="text" id="color-hex" class="tool-input" value="#a0a0ff">
+  </div>
+  <div class="tool-form-group">
+    <label for="color-rgb" class="tool-label">RGB Code</label>
+    <input type="text" id="color-rgb" class="tool-input" value="rgb(160, 160, 255)">
+  </div>
+  <div class="tool-form-group">
+    <label for="color-hsl" class="tool-label">HSL Code</label>
+    <input type="text" id="color-hsl" class="tool-input" value="hsl(240, 100%, 81%)">
+  </div>
+  <div class="tool-form-group">
+    <label for="color-cmyk" class="tool-label">CMYK Code</label>
+    <input type="text" id="color-cmyk" class="tool-input" value="cmyk(37%, 37%, 0%, 0%)">
+  </div>
+</div>
+
+<!-- WCAG Contrast Box -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);margin-top:var(--space-md);background:var(--code-bg);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:var(--space-md);text-align:center;">
+  <div id="contrast-light" style="font-size:0.95rem;"></div>
+  <div id="contrast-dark" style="font-size:0.95rem;"></div>
+</div>
+
+<!-- Preset Swatches & Copy Actions -->
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--space-md);margin-top:var(--space-lg);padding-top:var(--space-md);border-top:1px solid var(--border-subtle);">
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <span style="font-size:0.85rem;color:var(--muted);">Presets:</span>
+    <button type="button" class="btn btn-sm btn-secondary" data-color-preset="#02133e" style="padding:0.2rem 0.5rem;background:#02133e;border-color:var(--border-strong);">#02133e</button>
+    <button type="button" class="btn btn-sm btn-secondary" data-color-preset="#182a69" style="padding:0.2rem 0.5rem;background:#182a69;border-color:var(--border-strong);">#182a69</button>
+    <button type="button" class="btn btn-sm btn-secondary" data-color-preset="#a0a0ff" style="padding:0.2rem 0.5rem;background:#a0a0ff;color:#02133e;border-color:var(--border-strong);">#a0a0ff</button>
+    <button type="button" class="btn btn-sm btn-secondary" data-color-preset="#51cf66" style="padding:0.2rem 0.5rem;background:#51cf66;color:#02133e;border-color:var(--border-strong);">#51cf66</button>
+  </div>
+  <button type="button" id="btn-copy-color-css" class="btn btn-primary btn-sm">Copy CSS Tokens</button>
+</div>
+
+<div id="color-status" class="tool-status-message" aria-live="polite"></div>

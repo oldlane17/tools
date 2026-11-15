@@ -1,0 +1,41 @@
+<div id="img-dropzone" class="file-dropzone">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+    <polyline points="21 15 16 10 5 21"></polyline>
+  </svg>
+  <p><strong>Click to choose an image</strong> or drag and drop PNG, JPG, WebP or SVG here</p>
+  <input type="file" id="img-file-input" accept="image/*" style="display:none">
+</div>
+
+<div class="tool-options-grid">
+  <div>
+    <label for="img-format" class="tool-label">Target Format:</label>
+    <select id="img-format" class="tool-select">
+      <option value="image/webp">WebP (Optimized & modern)</option>
+      <option value="image/png">PNG (Lossless & transparent)</option>
+      <option value="image/jpeg">JPEG (Standard photo format)</option>
+    </select>
+  </div>
+  <div>
+    <label for="img-quality" class="tool-label">
+      <span>Quality Compression:</span>
+      <span id="img-quality-val">85%</span>
+    </label>
+    <input type="range" id="img-quality" min="10" max="100" value="85" style="width:100%;accent-color:var(--accent);margin-top:0.5rem;">
+  </div>
+</div>
+
+<div class="tool-actions">
+  <button type="button" id="btn-convert-img" class="btn btn-primary">Convert & Compress &rarr;</button>
+  <button type="button" id="btn-download-img" class="btn btn-secondary" disabled>Download Converted Image</button>
+  <button type="button" id="btn-example-img" class="btn btn-secondary btn-sm">Try sample image</button>
+</div>
+
+<div id="img-stats"></div>
+<div id="img-status" class="tool-status-message" aria-live="polite"></div>
+
+<div id="img-preview-card" style="display:none;margin-top:var(--space-md);background:var(--code-bg);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:var(--space-md);text-align:center;">
+  <p style="font-size:0.85rem;color:var(--muted);margin-bottom:var(--space-xs);">Live Preview:</p>
+  <img id="img-preview" alt="Converted preview" style="max-width:100%;max-height:300px;border-radius:var(--radius-sm);object-fit:contain;">
+</div>
